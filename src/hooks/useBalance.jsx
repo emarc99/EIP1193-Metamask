@@ -10,7 +10,7 @@ export const useBalance = (address) => {
             method: 'eth_getBalance',
             params: [address, 'latest'],
           });
-          const balanceDecimal  = parseInt((balanceHex, 16)/1e18);
+          const balanceDecimal  = parseInt(balanceHex, 16)/1e18
           setBalance(balanceDecimal);
         } catch (error) {
           console.error('Error fetching balance:', error);

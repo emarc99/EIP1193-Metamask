@@ -27,6 +27,7 @@ function App() {
           onChange={(e) => setAddress(e.target.value)}
         />
         {balance && <p>Balance: {balance} ETH</p>}
+        {!balance && <p>Balance: {balance} ETH</p>}
       </div>
       <hr />
       <input
