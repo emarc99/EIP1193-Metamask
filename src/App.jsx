@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { useMetaMask } from './hooks/useMetaMask';
-import { useBalance } from './hooks/useBalance';
-import { useNonce } from './hooks/useNonce';
-import './app.css';
+import { useState } from 'react'
+import { useMetaMask } from './context/useMetaMask'
+import { useBalance } from './hooks/useBalance'
+import { useNonce } from './hooks/useNonce'
+import './app.css'
 
 function App() {
-  const { account, chainId, connectToMetaMask } = useMetaMask();
-  const [address, setAddress] = useState('');
-  const [blockId, setBlockId] = useState('latest');
+  const { account, chainId, connectToMetaMask } = useMetaMask()
+  const [address, setAddress] = useState('')
+  const [blockId, setBlockId] = useState('latest')
 
-  const balance = useBalance(address);
-  const nonce = useNonce(account, blockId);
+  const balance = useBalance(address)
+  const nonce = useNonce(account, blockId)
 
   return (
     <div className="App">
